@@ -1,11 +1,16 @@
 package napier.example.com.radiobutton;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import napier.example.com.radiobutton.activities.HopewellRocksFacts;
+import napier.example.com.radiobutton.activities.NiagaraFallsFacts;
+import napier.example.com.radiobutton.activities.ParliamentHillFacts;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,14 +29,19 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             ImageView imageView = (ImageView)findViewById(R.id.imageView);
+            Intent intent = new Intent();
             switch (v.getId()){
-                case R.id.radioButton1: imageView.setImageResource(R.drawable.hopewell_rocks);
+                case R.id.radioButton1: intent =
+                        new Intent(MainActivity.this, HopewellRocksFacts.class);
                     break;
-                case R.id.radioButton2: imageView.setImageResource(R.drawable.niagara_falls);
+                case R.id.radioButton2: intent =
+                        new Intent(MainActivity.this, NiagaraFallsFacts.class);
                     break;
-                case R.id.radioButton3: imageView.setImageResource(R.drawable.parliament_hill);
+                case R.id.radioButton3: intent =
+                        new Intent(MainActivity.this, ParliamentHillFacts.class);
                     break;
             }
+            startActivity(intent);
             RadioButton rb = (RadioButton)v;
             Toast.makeText(MainActivity.this,rb.getText(), Toast.LENGTH_LONG).show();
         }

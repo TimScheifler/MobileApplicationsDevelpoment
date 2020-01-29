@@ -5,15 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="fill_parent"
-        android:layout_height="28dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="172dp"
         android:gravity="center_horizontal"
         android:text="@string/LandmarkTitle"
         android:textAppearance="?android:attr/textAppearance"
+        app:layout_constraintBottom_toTopOf="@+id/rbGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoulteX="0dp"
-        tools:layout_editor_absoulteY="45dp"/>
+        tools:layout_editor_absoulteY="45dp" />
 
     <RadioGroup
         android:id="@+id/rbGroup"
@@ -21,18 +27,17 @@
         android:layout_height="0dp"
         android:layout_marginStart="71dp"
         android:layout_marginLeft="71dp"
-        android:layout_marginTop="200dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Hoewell Rocks" />
+            android:text="Hopewell Rocks" />
 
         <RadioButton
             android:id="@+id/radioButton2"
@@ -57,7 +62,7 @@
         android:layout_marginLeft="3dp"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
-        android:layout_marginBottom="174dp"
+        android:layout_marginBottom="173dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
